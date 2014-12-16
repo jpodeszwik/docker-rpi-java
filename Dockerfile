@@ -20,3 +20,9 @@ RUN \
 
 ENV JAVA_HOME /opt/jdk
 ENV PATH $PATH:$JAVA_HOME/bin
+
+# add environment variables for non root users
+RUN \
+  echo "JAVA_HOME=$JAVA_HOME" >> /etc/environment && \
+  echo "PATH=$PATH" >> /etc/environment
+
