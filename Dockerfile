@@ -17,6 +17,8 @@ RUN \
   rm $JAVA_DOWNLOADED_FILENAME && \
   mv jdk$JAVA_VERSION /opt && \
   echo "export PATH=$PATH:/opt/jdk$JAVA_VERSION/bin" >> /root/.bashrc && \
-  echo "export JAVA_HOME=/opt/jdk$JAVA_VERSION" >> /root/.bashrc
+  echo "export JAVA_HOME=/opt/jdk$JAVA_VERSION" >> /root/.bashrc && \
+  echo "PATH=/bin:/usr/bin:/opt/jdk$JAVA_VERSION/bin" >> /etc/environment && \
+  echo "JAVA_HOME=/opt/jdk$JAVA_VERSION" >> /etc/environment
 
 ENV JAVA_HOME /opt/jdk$JAVA_VERSION
